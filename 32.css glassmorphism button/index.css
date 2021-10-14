@@ -1,0 +1,79 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	background-color: #262626FF;
+}
+div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 100px;
+	width: 300px;
+	font-size: 50px;
+	font-weight: bold;
+	font-family: cursive;
+	letter-spacing: 2px;
+	color: white;
+	background-color: rgba(255, 255, 255, 0.1);
+	box-shadow: 1px 1px 60px black;
+	border-radius: 10px;
+	cursor: pointer;
+	overflow: hidden;
+}
+div::before{
+	content: '';
+	display: block;
+	position: absolute;
+	height: 100px;
+	width: 300px;
+	bottom: 80%;
+	left: 80%;
+	background-color: deeppink;
+	box-shadow: 1px 1px 60px deeppink,
+	            1px 1px 60px deeppink;
+    filter: blur(10px);
+    border-radius: 10px;
+    z-index: -1;
+}
+div::after{
+	content: '';
+	display: block;
+	position: absolute;
+	height: 100px;
+	width: 300px;
+	top: 80%;
+	right: 80%;
+	background-color: dodgerblue;
+	box-shadow: 1px 1px 60px dodgerblue,
+	            1px 1px 60px dodgerblue;
+	filter: blur(10px);
+	border-radius: 10px;
+	z-index: -1;
+}
+div:hover::before{
+	animation: anime1 1s linear forwards;
+}
+div:hover::after{
+	animation: anime2 1s linear forwards;
+}
+@keyframes anime1{
+	100%{
+		bottom: 50%;
+		left: 50%;
+	}
+}
+@keyframes anime2{
+	100%{
+		top: 50%;
+		right: 50%;
+	}
+}
